@@ -6,7 +6,7 @@ import Dashboard from "./components/pages/Dashboard";
 import Complaint from "./components/pages/Complaint";
 import Community from "./components/pages/community";
 import IncidentReports from "./IncidentReports";
-// import ComplaintDetailsPage from "./components/pages/trackingComplaints";
+import ComplaintDetailsPage from "./components/pages/trackingComplaints";
 import {
   BrowserRouter as Router,
   Routes,
@@ -56,7 +56,7 @@ function App() {
               <Route path="/incidents" element={<IncidentReports/>} ></Route>
               <Route path='/database' element={<Table1 />}></Route>
               <Route path="/community" element={<Community/>}></Route>
-             {/* <Route path="/tracking" element={<ComplaintDetailsPage/>}></Route>  */}
+             <Route path="/tracking" element={<ComplaintDetailsPage/>}></Route> 
 
             </Routes>
             <ToastContainer />
