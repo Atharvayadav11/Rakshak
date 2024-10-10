@@ -1,0 +1,498 @@
+{
+    "version": 0.6,
+    "generator": "Overpass API 0.7.62.1 084b4234",
+    "osm3s": {
+        "timestamp_osm_base": "2024-10-09T22:05:55Z",
+        "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+    },
+    "elements": [
+        {
+            "type": "node",
+            "id": 347149556,
+            "lat": 19.0559589,
+            "lon": 72.8357172,
+            "tags": {
+                "addr:city": "Bandra West, Mumbai",
+                "addr:postcode": "400050",
+                "amenity": "police",
+                "name": "Bandra Police Station",
+                "operator": "Mumbai Police"
+            }
+        },
+        {
+            "type": "node",
+            "id": 347152618,
+            "lat": 19.0640370,
+            "lon": 72.8371137,
+            "tags": {
+                "amenity": "police",
+                "name": "Khar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 985121037,
+            "lat": 19.1664849,
+            "lon": 72.8543819,
+            "tags": {
+                "amenity": "police",
+                "name": "Aarey Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 985121043,
+            "lat": 19.1558742,
+            "lon": 72.8576756,
+            "tags": {
+                "amenity": "police",
+                "name": "Goregaon (E) Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 1960732105,
+            "lat": 19.1960801,
+            "lon": 72.9811271,
+            "tags": {
+                "amenity": "police",
+                "name": "Police Commissioner Office"
+            }
+        },
+        {
+            "type": "node",
+            "id": 1960732177,
+            "lat": 19.2131355,
+            "lon": 72.9627611,
+            "tags": {
+                "amenity": "police",
+                "name": "Vartak Nagar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 1990647113,
+            "lat": 19.0990752,
+            "lon": 73.0051825,
+            "tags": {
+                "addr:housenumber": "Sector 10",
+                "addr:postcode": "400709",
+                "addr:street": "Atmaram Bhoir Marg",
+                "amenity": "police",
+                "name:en": "D Mart Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 2097757614,
+            "lat": 19.2282071,
+            "lon": 72.8582168,
+            "tags": {
+                "amenity": "police"
+            }
+        },
+        {
+            "type": "node",
+            "id": 2206289223,
+            "lat": 19.2192494,
+            "lon": 73.0867512,
+            "tags": {
+                "addr:postcode": "421202",
+                "addr:street": "kopar road",
+                "amenity": "police",
+                "name": "Vishnunagar Police Station",
+                "opening_hours": "24/7"
+            }
+        },
+        {
+            "type": "node",
+            "id": 2298079810,
+            "lat": 19.2059514,
+            "lon": 72.8729038,
+            "tags": {
+                "amenity": "police",
+                "name": "Police Station, Thakur Village"
+            }
+        },
+        {
+            "type": "node",
+            "id": 2308138695,
+            "lat": 19.1789489,
+            "lon": 72.8577333,
+            "tags": {
+                "amenity": "police",
+                "name": "Dindoshi Police station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 2562631232,
+            "lat": 19.1755909,
+            "lon": 72.8676526,
+            "tags": {
+                "amenity": "police",
+                "name": "Gokuldham Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 2930732807,
+            "lat": 19.0652856,
+            "lon": 72.8959976,
+            "tags": {
+                "amenity": "police",
+                "name": "Tilak Nagar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 2933183452,
+            "lat": 19.0717172,
+            "lon": 72.8842275,
+            "tags": {
+                "addr:city": "Kurla West, Mumbai",
+                "addr:postcode": "400070",
+                "amenity": "police",
+                "name": "VB Nagar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3186544582,
+            "lat": 19.2294953,
+            "lon": 72.8559481,
+            "tags": {
+                "amenity": "police"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3204171992,
+            "lat": 19.0537000,
+            "lon": 72.9357000,
+            "tags": {
+                "amenity": "police",
+                "name": "POLICE STATION"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3205950901,
+            "lat": 19.1548902,
+            "lon": 72.9291114,
+            "tags": {
+                "addr:postcode": "400 078",
+                "addr:street": "Tembhipada Road",
+                "amenity": "police",
+                "name": "Tembhipada Police Chowki"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3205956099,
+            "lat": 19.0639495,
+            "lon": 72.9008254,
+            "tags": {
+                "addr:city": "mumbai",
+                "addr:housenumber": "near Handore office",
+                "addr:postcode": "400089",
+                "addr:street": "P.L. Lokhande Marg",
+                "amenity": "police",
+                "name": "chembur police station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3215577539,
+            "lat": 19.0595211,
+            "lon": 72.9116651,
+            "tags": {
+                "amenity": "police",
+                "name": "Govandi Police station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3215584200,
+            "lat": 19.0528478,
+            "lon": 72.9270997,
+            "tags": {
+                "amenity": "police",
+                "name": "Lallubhai Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3215621243,
+            "lat": 19.0603518,
+            "lon": 72.9104397,
+            "tags": {
+                "addr:city": "mumbai",
+                "addr:postcode": "400089",
+                "addr:street": "P.L. Lokhande Marg",
+                "amenity": "police",
+                "name": "gaikwaad nagar police station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3263043837,
+            "lat": 19.2031874,
+            "lon": 72.9550994,
+            "tags": {
+                "addr:city": "Thane (West)",
+                "amenity": "police",
+                "name": "WAGLE POLICE STATION"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3532121099,
+            "lat": 19.0650661,
+            "lon": 72.8808749,
+            "tags": {
+                "amenity": "police",
+                "name": "Nehru Nagar Kurla E Police Chowky"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3547889593,
+            "lat": 19.0557429,
+            "lon": 72.9088297,
+            "tags": {
+                "amenity": "police",
+                "name": "Khardev Nagar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 3602876220,
+            "lat": 19.1187189,
+            "lon": 72.9373252,
+            "tags": {
+                "amenity": "police",
+                "name": "Vikhroli Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 4402150675,
+            "lat": 19.0672141,
+            "lon": 72.9031566,
+            "tags": {
+                "addr:city": "cheedanagar, chembur,mumbai",
+                "addr:postcode": "400089",
+                "addr:street": "Road No 1",
+                "amenity": "police",
+                "name": "Chheda Nagar Police Station",
+                "operator": "Mumbai Police",
+                "phone": "+912225259663"
+            }
+        },
+        {
+            "type": "node",
+            "id": 4621598794,
+            "lat": 19.2573838,
+            "lon": 72.8650937,
+            "tags": {
+                "addr:street": "C S Link Road",
+                "amenity": "police",
+                "name:en": "Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 4658680890,
+            "lat": 19.1695498,
+            "lon": 72.9591762,
+            "tags": {
+                "addr:postcode": "400081",
+                "addr:street": "Navghar Marg",
+                "amenity": "police"
+            }
+        },
+        {
+            "type": "node",
+            "id": 4791178925,
+            "lat": 19.1715356,
+            "lon": 72.9566691,
+            "tags": {
+                "addr:postcode": "400081",
+                "addr:street": "Lokmanya Tilak Road",
+                "amenity": "police"
+            }
+        },
+        {
+            "type": "node",
+            "id": 5073191992,
+            "lat": 19.1147228,
+            "lon": 73.0343208,
+            "tags": {
+                "amenity": "police",
+                "name": "Shil Mhape Police Chouki"
+            }
+        },
+        {
+            "type": "node",
+            "id": 5077468322,
+            "lat": 19.1428227,
+            "lon": 73.0461170,
+            "tags": {
+                "amenity": "police",
+                "name:en": "Shil Daighar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 5077468323,
+            "lat": 19.1463017,
+            "lon": 73.0009279,
+            "tags": {
+                "amenity": "police",
+                "name:en": "Rabale Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 5116459526,
+            "lat": 19.2095830,
+            "lon": 72.8501404,
+            "tags": {
+                "amenity": "police",
+                "name": "Kandivali Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 5506320530,
+            "lat": 19.0645147,
+            "lon": 72.8603409,
+            "tags": {
+                "amenity": "police",
+                "name": "BKC Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 5667043327,
+            "lat": 19.1998393,
+            "lon": 72.8614152,
+            "tags": {
+                "amenity": "police",
+                "name": "Samatanagar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 6052581621,
+            "lat": 19.1639760,
+            "lon": 72.9374814,
+            "tags": {
+                "amenity": "police",
+                "name": "Traffic Police Chowky"
+            }
+        },
+        {
+            "type": "node",
+            "id": 8170852418,
+            "lat": 19.1834974,
+            "lon": 72.8445059,
+            "tags": {
+                "amenity": "police",
+                "name:en": "Malad Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 9215039104,
+            "lat": 19.2313943,
+            "lon": 72.9762793,
+            "tags": {
+                "amenity": "police",
+                "name": "Chitalsar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 9730701801,
+            "lat": 19.0728870,
+            "lon": 72.8376531,
+            "tags": {
+                "amenity": "police",
+                "name": "Khar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 9876652392,
+            "lat": 19.2166065,
+            "lon": 73.0861813,
+            "tags": {
+                "amenity": "police",
+                "name": "Ramnagar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 9876669070,
+            "lat": 19.2190690,
+            "lon": 73.0868311,
+            "tags": {
+                "amenity": "police",
+                "name": "Vishnu Nagar Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 10196823118,
+            "lat": 19.2590592,
+            "lon": 72.9669954,
+            "tags": {
+                "addr:postcode": "400607",
+                "addr:street": "Ghodbunder Service Road",
+                "amenity": "police",
+                "name:en": "Kasarvadavali Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 10296626442,
+            "lat": 19.1031659,
+            "lon": 72.8327116,
+            "tags": {
+                "amenity": "police",
+                "name": "Juhu Police Station"
+            }
+        },
+        {
+            "type": "node",
+            "id": 10705115166,
+            "lat": 19.1871851,
+            "lon": 72.9759036,
+            "tags": {
+                "amenity": "police"
+            }
+        },
+        {
+            "type": "node",
+            "id": 11615592630,
+            "lat": 19.2059644,
+            "lon": 72.9826331,
+            "tags": {
+                "amenity": "police",
+                "name": "Anti Corruption Bureau Thane"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12026381269,
+            "lat": 19.0610696,
+            "lon": 72.8433137,
+            "tags": {
+                "amenity": "police",
+                "name": "Shivaji Nagar Police Station"
+            }
+        }
+    ]
+}

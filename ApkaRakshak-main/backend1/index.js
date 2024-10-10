@@ -7,16 +7,15 @@ const complaintRoutes = require('./routes/complainRoutes');
 const path = require('path');
 const app = express();
 const port = 3001;
-const axios = require('axios')
+const axios = require('axios');
 const Complaint = require('./models/complaint');
+const PoliceStation = require('./models/PoliceStation'); // Adjust the path as necessary
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-// Serve uploaded files
 
 const OPENCAGE_API_KEY = 'fb95d3f1d839476f8d8fc209dd4a0aa0'; // Replace with your OpenCage API key
 
@@ -96,13 +95,52 @@ app.post('/api/toggleVerification/:id', async (req, res) => {
   }
 });
 
+// Define the incidents route
+app.get('/api/incidents', async (req, res) => {
+  try {
+    const incidents = await Complaint.find({}, 'location.latitude location.longitude category');
+    res.json(incidents);
+    console.log(incidents); // This logs the incidents to the console
+  } catch (error) {
+    console.error('Error fetching incidents:', error.message); // Log the error for debugging
+    res.status(500).json({ message: 'Error fetching incidents', error: error.message });
+  }
+});
+
 app.use('/api/users', userRoutes);
 app.use('/api/complaints', complaintRoutes);
+
+
+app.post('/api/fetch-police-stations', async (req, res) => {
+  try {
+    const response = await axios.get("http://overpass-api.de/api/interpreter?data=[out:json];node[amenity=police](19.0515,72.8325,19.2990,73.1300);out body;");
+    const stations = response.data.elements;
+
+    const formattedStations = stations.map(station => ({
+      name: station.tags.name || 'Unnamed Police Station',
+      lat: station.lat,
+      lon: station.lon,
+    }));
+
+    // Check if formattedStations is an array before inserting
+    if (formattedStations.length > 0) {
+      await PoliceStation.insertMany(formattedStations);
+      res.status(200).json({ message: 'Police stations saved successfully', stations: formattedStations });
+    } else {
+      res.status(404).json({ message: 'No police stations found' });
+    }
+  } catch (error) {
+    console.error('Error fetching police stations:', error);
+    res.status(500).json({ message: 'Error fetching police stations', error: error.message });
+  }
+});
+
+
 // MongoDB connection
 mongoose.connect("mongodb+srv://atharvayadav11:ashokvaishali@cluster0.twnwnbu.mongodb.net/AapkaRakshaDB?retryWrites=true&w=majority")
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
 app.listen(port, () => {
-  console.log(`Server running on port ${ port }`);
+  console.log(`Server running on port ${port}`);
 });

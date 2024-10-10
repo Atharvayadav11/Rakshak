@@ -26,7 +26,7 @@ import LandingPage from "./components/Landingpage";
 import HereMaps from "./components/pages/HereMaps";
 import Table1 from "./components/Tables/Table";
 import Home from "./components/pages/Home";
-
+import IntroTour from "./IntroTour";
 
 
 function App() {
@@ -41,6 +41,7 @@ function App() {
       <div className="App">
         <div className="auth-wrapper">
           <div className="auth-inner">
+          <IntroTour/>
             <Routes>
               <Route
                 path="/"

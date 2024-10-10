@@ -11,7 +11,7 @@ function Navbar() {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                     <div className='py-2'>
-        <p className='text-2xl font-semibold mt-1'><span className='text-[#115579]'>Aapka</span>Rakshak</p> 
+                    <p className='text-2xl font-semibold mt-1'><span className='text-[#115579]'>Chowki</span>Daar</p> 
       </div>
                     </Link>
                     <SignedOut>

@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 const ComplaintSchema = new mongoose.Schema({
   category: { type: String, required: true },
+  nearestStation: {
+    name: String,
+  
+  },
   description: { type: String, required: true },
   anonymous: { type: Boolean, default: false },
   image: { type: String }, 

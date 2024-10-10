@@ -216,6 +216,33 @@ const IncidentCard = ({ crime }) => {
     }
   };
 
+  // const generatePDF = () => {
+  //   const doc = new jsPDF();
+  //   doc.setFontSize(26);
+  //   doc.setFont("helvetica", "bold");
+  //   doc.setTextColor(0, 51, 102);
+  //   doc.text("Incident Report", 105, 15, { align: "center" });
+
+  //   const img = new Image();
+  //   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  //   img.crossOrigin = 'Anonymous';
+  //   img.src = proxyUrl + crime.image;
+  //   img.onload = () => {
+  //     let imgWidth = 70;
+  //     let imgHeight = (img.height * imgWidth) / img.width;
+  //     if (imgHeight > 60) {
+  //       imgHeight = 60;
+  //       imgWidth = (img.width * imgHeight) / img.height;
+  //     }
+  //     doc.addImage(img, 'JPEG', 140, 25, imgWidth, imgHeight);
+  //     addTextContent(doc);
+  //   };
+
+  //   img.onerror = () => {
+  //     addTextContent(doc);
+  //   };
+  // };
+
   const generatePDF = () => {
     const doc = new jsPDF();
     doc.setFontSize(26);
@@ -224,24 +251,27 @@ const IncidentCard = ({ crime }) => {
     doc.text("Incident Report", 105, 15, { align: "center" });
 
     const img = new Image();
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    img.crossOrigin = 'Anonymous';
-    img.src = proxyUrl + crime.image;
+    img.crossOrigin = 'Anonymous'; // Necessary for CORS if the server allows it
+    img.src = crime.image; // Use direct image URL
     img.onload = () => {
-      let imgWidth = 70;
-      let imgHeight = (img.height * imgWidth) / img.width;
-      if (imgHeight > 60) {
-        imgHeight = 60;
-        imgWidth = (img.width * imgHeight) / img.height;
-      }
-      doc.addImage(img, 'JPEG', 140, 25, imgWidth, imgHeight);
-      addTextContent(doc);
+        let imgWidth = 70;
+        let imgHeight = (img.height * imgWidth) / img.width;
+        if (imgHeight > 60) {
+            imgHeight = 60;
+            imgWidth = (img.width * imgHeight) / img.height;
+        }
+        doc.addImage(img, 'JPEG', 140, 25, imgWidth, imgHeight);
+        addTextContent(doc);
+        doc.save(`incident_report_${crime.id}.pdf`); // Save the PDF after adding content
     };
 
     img.onerror = () => {
-      addTextContent(doc);
+        addTextContent(doc);
+        doc.save(`incident_report_${crime.id}.pdf`); // Save the PDF even if the image fails to load
     };
-  };
+};
+
+
 
   const addTextContent = (doc) => {
     doc.setFontSize(12);

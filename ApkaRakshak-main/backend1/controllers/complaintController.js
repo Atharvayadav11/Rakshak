@@ -2,9 +2,19 @@ const Complaint = require('../models/complaint');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const fs = require('fs');
 const path = require('path');
+const twilio = require('twilio');
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI('AIzaSyB7kjPOLBCWChhdbP3vSXGDC7HAWzpv3Rg');
+
+// Twilio credentials
+const accountSid = 'AC73c13a850ac8f3dae2bafb546199c741';
+const authToken = '9b4e22f5dd9149a0a9b7be46eae33e24';
+const client = twilio(accountSid, authToken);
+
+// Constant phone numbers for sending SMS
+const userPhoneNumber = '+919321543686'; // Replace with the actual constant number
+const authoritiesPhoneNumber = '+919892261206'; // Authorities contact number
 
 exports.submitComplaint = async (req, res) => {
   try {
@@ -32,6 +42,31 @@ exports.submitComplaint = async (req, res) => {
     await complaint.save();
     console.log('Complaint saved successfully');
 
+    // Send SMS to the user about the registered complaint
+    const userMessageBody = `Your complaint has been registered successfully. Complaint ID: ${complaint._id}`;
+    await sendSms(userPhoneNumber, userMessageBody);
+
+    // Send formatted message to authorities
+    const authoritiesMessageBody = `
+Complaint Received:
+
+ID: ${complaint._id}
+Location: 
+    Latitude: ${complaint.location.latitude}
+    Longitude: ${complaint.location.longitude}
+Description: ${description}
+
+AI Analysis:
+    - Image Description: ${geminiAnalysis.imageDescription}
+    - Description Match: ${geminiAnalysis.descriptionMatch ? 'Yes' : 'No'}
+    - Incident Level: ${geminiAnalysis.incidentLevel}
+    - Additional Details: ${geminiAnalysis.additionalDetails}
+
+Time: ${new Date().toISOString()}
+`;
+
+    await sendSms(authoritiesPhoneNumber, authoritiesMessageBody);
+
     res.status(201).json({ message: 'Complaint registered successfully', complaint });
   } catch (error) {
     console.error('Error submitting complaint:', error);
@@ -42,6 +77,19 @@ exports.submitComplaint = async (req, res) => {
     });
   }
 };
+
+async function sendSms(to, body) {
+  try {
+    const message = await client.messages.create({
+      from: '+15707558015', // Your Twilio phone number
+      to,
+      body,
+    });
+    console.log('SMS sent successfully:', message.sid);
+  } catch (error) {
+    console.error('Error sending SMS:', error);
+  }
+}
 
 async function analyzeComplaintWithGemini(description, imagePath) {
   try {
@@ -65,9 +113,9 @@ async function analyzeComplaintWithGemini(description, imagePath) {
 
     Tasks:
     1. If an image is provided, describe it in detail.
-    2. Determine if the image (if provided) matches the description.
+    2. Determine if the image matches the description provided.If the image description and the image do not match, classify the complaint as a "Wrong Complaint" to prevent incorrect submissions.
     3. Assess the authenticity and seriousness of the complaint.
-    4. Categorize the incident level as: Low Priority, Medium Priority, High Priority, or Very High Priority.
+    4. Categorize the incident level as:Wrong Complaint , Low Priority, Medium Priority, High Priority, or Very High Priority.
     5. Provide any additional relevant details or insights.
 
     Format your response as a JSON object with these keys: imageDescription, descriptionMatch, incidentLevel, additionalDetails`;
@@ -96,4 +144,3 @@ async function analyzeComplaintWithGemini(description, imagePath) {
     return { error: error.message };  // Return error as part of the analysis result
   }
 }
-

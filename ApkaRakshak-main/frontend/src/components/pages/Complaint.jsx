@@ -8,6 +8,226 @@ import { Button } from '../ui/button';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../ui/select";
 import { auth } from "../../../firebase";
 
+
+// Police station data (you can also import this from a separate file if needed)
+const policeStations = [
+  {
+      "name": "Bandra Police Station",
+      "latitude": 19.0559589,
+      "longitude": 72.8357172
+  },
+  {
+    "name": "Bhayandar Police Station",
+      "latitude": 19.3010 ,
+      "longitude": 72.8466
+  },
+  {
+      "name": "Khar Police Station",
+      "latitude": 19.0640370,
+      "longitude": 72.8371137
+  },
+  {
+      "name": "Aarey Police Station",
+      "latitude": 19.1664849,
+      "longitude": 72.8543819
+  },
+  {
+      "name": "Goregaon (E) Police Station",
+      "latitude": 19.1558742,
+      "longitude": 72.8576756
+  },
+  {
+      "name": "Police Commissioner Office",
+      "latitude": 19.1960801,
+      "longitude": 72.9811271
+  },
+  {
+      "name": "Vartak Nagar Police Station",
+      "latitude": 19.2131355,
+      "longitude": 72.9627611
+  },
+  {
+      "name": "D Mart Police Station",
+      "latitude": 19.0990752,
+      "longitude": 73.0051825
+  },
+  {
+      "name": "Vishnunagar Police Station",
+      "latitude": 19.2192494,
+      "longitude": 73.0867512
+  },
+  {
+      "name": "Police Station, Thakur Village",
+      "latitude": 19.2059514,
+      "longitude": 72.8729038
+  },
+  {
+      "name": "Dindoshi Police station",
+      "latitude": 19.1789489,
+      "longitude": 72.8577333
+  },
+  {
+      "name": "Gokuldham Police Station",
+      "latitude": 19.1755909,
+      "longitude": 72.8676526
+  },
+  {
+      "name": "Tilak Nagar Police Station",
+      "latitude": 19.0652856,
+      "longitude": 72.8959976
+  },
+  {
+      "name": "VB Nagar Police Station",
+      "latitude": 19.0717172,
+      "longitude": 72.8842275
+  },
+  {
+      "name": "POLICE STATION",
+      "latitude": 19.0537000,
+      "longitude": 72.9357000
+  },
+  {
+      "name": "Tembhipada Police Chowki",
+      "latitude": 19.1548902,
+      "longitude": 72.9291114
+  },
+  {
+      "name": "chembur police station",
+      "latitude": 19.0639495,
+      "longitude": 72.9008254
+  },
+  {
+      "name": "Govandi Police station",
+      "latitude": 19.0595211,
+      "longitude": 72.9116651
+  },
+  {
+      "name": "Lallubhai Police Station",
+      "latitude": 19.0528478,
+      "longitude": 72.9270997
+  },
+  {
+      "name": "gaikwaad nagar police station",
+      "latitude": 19.0603518,
+      "longitude": 72.9104397
+  },
+  {
+      "name": "WAGLE POLICE STATION",
+      "latitude": 19.2031874,
+      "longitude": 72.9550994
+  },
+  {
+      "name": "Nehru Nagar Kurla E Police Chowky",
+      "latitude": 19.0650661,
+      "longitude": 72.8808749
+  },
+  {
+      "name": "Khardev Nagar Police Station",
+      "latitude": 19.0557429,
+      "longitude": 72.9088297
+  },
+  {
+      "name": "Vikhroli Police Station",
+      "latitude": 19.1187189,
+      "longitude": 72.9373252
+  },
+  {
+      "name": "Chheda Nagar Police Station",
+      "latitude": 19.0672141,
+      "longitude": 72.9031566
+  },
+  {
+      "name": "Police Station",
+      "latitude": 19.2573838,
+      "longitude": 72.8650937
+  },
+  {
+      "name": "Navghar Marg Police Station",
+      "latitude": 19.1695498,
+      "longitude": 72.9591762
+  },
+  {
+      "name": "Lokmanya Tilak Road Police Station",
+      "latitude": 19.1715356,
+      "longitude": 72.9566691
+  },
+  {
+      "name": "Shil Mhape Police Chouki",
+      "latitude": 19.1147228,
+      "longitude": 73.0343208
+  },
+  {
+      "name": "Shil Daighar Police Station",
+      "latitude": 19.1428227,
+      "longitude": 73.0461170
+  },
+  {
+      "name": "Rabale Police Station",
+      "latitude": 19.1463017,
+      "longitude": 73.0009279
+  },
+  {
+      "name": "Kandivali Police Station",
+      "latitude": 19.2095830,
+      "longitude": 72.8501404
+  },
+  {
+      "name": "BKC Police Station",
+      "latitude": 19.0645147,
+      "longitude": 72.8603409
+  },
+  {
+      "name": "Samatanagar Police Station",
+      "latitude": 19.1998393,
+      "longitude": 72.8614152
+  },
+  {
+      "name": "Traffic Police Chowky",
+      "latitude": 19.1639760,
+      "longitude": 72.9374814
+  },
+  {
+      "name": "Malad Police Station",
+      "latitude": 19.1834974,
+      "longitude": 72.8445059
+  },
+  {
+      "name": "Chitalsar Police Station",
+      "latitude": 19.2313943,
+      "longitude": 72.9762793
+  },
+  {
+      "name": "Ramnagar Police Station",
+      "latitude": 19.2166065,
+      "longitude": 73.0861813
+  },
+  {
+      "name": "Vishnu Nagar Police Station",
+      "latitude": 19.2190690,
+      "longitude": 73.0868311
+  },
+  {
+      "name": "Kasarvadavali Police Station",
+      "latitude": 19.2590592,
+      "longitude": 72.9669954
+  },
+  {
+      "name": "Juhu Police Station",
+      "latitude": 19.1031659,
+      "longitude": 72.8327116
+  },
+  {
+      "name": "Anti Corruption Bureau Thane",
+      "latitude": 19.2059644,
+      "longitude": 72.9826331
+  },
+  {
+      "name": "Shivaji Nagar Police Station",
+      "latitude": 19.0610696,
+      "longitude": 72.8433137
+  }
+]
+
 const categories = [
   { value: 'theft', label: 'Theft' },
   { value: 'burglary', label: 'Burglary' },
@@ -24,7 +244,26 @@ const categories = [
   { value: 'others', label: 'Others' },
 ];
 
+// Haversine formula to calculate distance between two lat/lon points
+const haversineDistance = (coords1, coords2) => {
+  const toRad = (x) => (x * Math.PI) / 180;
+
+  const R = 6371; // Radius of the Earth in km
+  const dLat = toRad(coords2.latitude - coords1.latitude);
+  const dLon = toRad(coords2.longitude - coords1.longitude);
+  
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(toRad(coords1.latitude)) * Math.cos(toRad(coords2.latitude)) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c; // Distance in km
+};
+
+
+
 const ComplaintForm = () => {
+  const [nearestStation, setNearestStation] = useState(null);
   const [userDetails, setUserDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [toast, setToast] = useState(null);
@@ -34,6 +273,7 @@ const ComplaintForm = () => {
     anonymous: false,
     image: null,
     location: null,
+    
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -46,7 +286,6 @@ const ComplaintForm = () => {
     try {
       const response = await axios.get(`http://localhost:3001/api/users/${uid}`);
       setUserDetails(response.data);
-      console.log(response.data);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching user data:", error.message);
@@ -71,13 +310,30 @@ const ComplaintForm = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setFormData(prev => ({
-            ...prev,
-            location: {
-              latitude: position.coords.latitude,
-              longitude: position.coords.longitude
-            }
-          }));
+          const userLocation = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          };
+          setFormData(prev => ({ ...prev, location: userLocation }));
+  
+          // Find the nearest police station
+          const nearestStation = policeStations.reduce((prev, curr) => {
+            const prevDistance = haversineDistance(userLocation, {
+              latitude: prev.latitude,
+              longitude: prev.longitude
+            });
+            const currDistance = haversineDistance(userLocation, {
+              latitude: curr.latitude,
+              longitude: curr.longitude
+            });
+            return (currDistance < prevDistance) ? curr : prev;
+          });
+          setNearestStation(nearestStation);
+  
+          console.log("Your location:", userLocation);
+          console.log("Nearest police station:", nearestStation);
+          
+     
         },
         (error) => {
           console.error("Error getting location:", error);
@@ -88,6 +344,7 @@ const ComplaintForm = () => {
       showToast("Your browser doesn't support geolocation.", "error");
     }
   }, []);
+  
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -128,6 +385,11 @@ const ComplaintForm = () => {
       data.append('userEmail', userDetails.email);
     }
 
+      // Include nearest station in the form data
+    if (nearestStation) {
+       data.append('nearestStation', JSON.stringify(nearestStation));
+     }
+
     try {
       const response = await axios.post('http://localhost:3001/api/complaints', data, {
         headers: {
@@ -136,12 +398,14 @@ const ComplaintForm = () => {
       });
       console.log(response.data);
       showToast("Your complaint has been successfully registered.", "success");
+      window.alert(`Your complaint has been sent to the nearest police station: ${nearestStation.name}`);
+
       setFormData({
         category: '',
         description: '',
         anonymous: false,
         image: null,
-        location: formData.location, // Preserve location
+        location: formData.location,
       });
     } catch (err) {
       console.error('Error submitting complaint:', err.response ? err.response.data : err.message);
@@ -209,7 +473,7 @@ const ComplaintForm = () => {
                   id="anonymous"
                   name="anonymous"
                   checked={formData.anonymous}
-                  onCheckedChange={(checked) => setFormData(prev => ({ ...prev, anonymous: checked }))}
+                  onCheckedChange={(checked) => setFormData(prev => ({ ...prev, anonymous: checked })) }
                 />
                 <Label htmlFor="anonymous" className='ml-2 block text-sm text-gray-900'>Post this complaint anonymously?</Label>
               </div>
@@ -221,19 +485,12 @@ const ComplaintForm = () => {
             type="submit"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Submitting...' : 'Submit Complaint'}
+            {isSubmitting ? "Submitting..." : "Submit Complaint"}
           </Button>
         </form>
       </div>
-      {toast && (
-        <div className={`fixed bottom-4 right-4 p-4 rounded-md ${
-          toast.type === 'success' ? 'bg-green-500' : 'bg-red-500'
-        } text-white`}>
-          {toast.message}
-        </div>
-      )}
     </div>
   );
-}
+};
 
 export default ComplaintForm;
