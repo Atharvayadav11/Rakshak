@@ -1,5 +1,5 @@
 ![image](https://github.com/user-attachments/assets/0ea1008e-5861-4d19-a587-7ac7989659f1)
- #ApkaRakshak
+ #AapkaRakshak
 Hackathon Project
 
 Problem Statement:
@@ -14,40 +14,37 @@ Our Solution has 2 separate interfaces one for users and the other for Law enfor
 
 User Interface
   1. A comprehensive heat map that considers all the historical approach 
+![image](https://github.com/user-attachments/assets/8dcab794-4bcd-4d32-80ee-f4b6d6cb9af2)
 
-<img width="935" alt="image" src="https://github.com/user-attachments/assets/98796a34-b10d-4c70-becd-b9cf1f8ea4d8">
 
   2.The Users can Submit complaints on the Complaint form and on submitting the Image is checked by the Gemini AI model to verify if the image matches the description   given by the user.
+![image](https://github.com/user-attachments/assets/86ad62ba-62fd-485d-aebc-bc2c8411e213)
 
-![image](https://github.com/user-attachments/assets/d2fa1cde-6687-4d24-bbf5-4eda9131905a)
 
   3.The users can see all the recent criminal activity in their community/area and make informed descisions for their safety.
-
-![Screenshot 2024-09-28 140432](https://github.com/user-attachments/assets/45887536-120b-4461-897d-388350bd02f9)
-
+![image](https://github.com/user-attachments/assets/c73e5326-ca8c-45c1-87c8-3ac740192905)
 
   4.The Routes features gives the user all the possible routes between thier chosen destination and source and it categorizes them in safe,risky and dangerous
 
-![Screenshot 2024-09-28 140629](https://github.com/user-attachments/assets/f640ad17-c695-4df2-bd30-6a5cd17b965e)
+![image](https://github.com/user-attachments/assets/df1bb395-2c12-4851-98d9-d6c20766d29e)
 
-![Screenshot 2024-09-28 140652 1](https://github.com/user-attachments/assets/bb2ee94a-f184-4f7f-b196-0e61fdcbd433)
+![image](https://github.com/user-attachments/assets/73a0feaa-d3c7-4403-8f03-0db173df643a)
 
 
 Admin Side Features 
-![Screenshot 2024-09-28 140859 1](https://github.com/user-attachments/assets/e1379434-555c-4368-8a97-10844ffa9c2e)
+![image](https://github.com/user-attachments/assets/16aeacb1-e1a4-4d5c-bd2b-70f7fe791d32)
 
 5.Real Time data of around 3000 criminal incidents accross india this data is webscraped from oficial govt sources
-![Screenshot 2024-09-28 140721 1](https://github.com/user-attachments/assets/393e8033-471b-48b3-8d12-20273ac88569)
+![image](https://github.com/user-attachments/assets/1d8ff951-5aea-47c7-b97a-634f6f6f69ff)
+
 
 6. Interractive Admin/Authorities Dashboard where they would get an overview of the crimes happening arround the city, heat maps, and many more parameters
-![Screenshot 2024-09-28 141002 1](https://github.com/user-attachments/assets/b1fd25f4-10d2-44d6-8187-accc36bfeb39)
+![image](https://github.com/user-attachments/assets/48798030-a581-4d92-9b20-aca19eb2a249)
 
 7. Detailed PDF of the crime and criminal
-![Screenshot 2024-09-28 141154 1](https://github.com/user-attachments/assets/fa3066c9-3c45-4cc6-a083-070d2ea779a5)
+![image](https://github.com/user-attachments/assets/b2511d47-2d05-4648-8e6a-e08e08a72596)
 
 8. This feature is one of our USP, here the authorities can provide a photo of a person and our train AI model analysis our dataset and provides all the previous criminal records of that criminal
-![Screenshot 2024-09-28 141039 1](https://github.com/user-attachments/assets/7d37c55f-3629-465c-a286-f8c36ada613f)
+![image](https://github.com/user-attachments/assets/bdbf4e1f-d477-40cc-bc76-567e8d840425)
 
 ![Uploading Screenshot 2024-09-28 141257[1].png…]()
-
-![image](https://github.com/user-attachments/assets/54f049d4-c4eb-42ea-8b02-52a87a31e527)
